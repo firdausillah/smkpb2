@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\{Banner, Grade, News, Profile};
+use App\Models\{Banner, Grade, News, Profile, Testimonial};
 
 use Illuminate\Http\Request;
 
@@ -13,7 +13,8 @@ class HomeController extends Controller
             'banners' => Banner::take(5)->get(),
             'grades' => Grade::get(),
             'profile' => Profile::first(),
-            'news' => News::take(4)->get()
+            'news' => News::take(4)->get(),
+            'testimonials' => Testimonial::take(5)->get()
         ]);
     }
 }

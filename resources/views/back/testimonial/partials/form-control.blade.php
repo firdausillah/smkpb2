@@ -32,7 +32,7 @@
                                         <select name="grade" id="grade" class="form-control">
                                             <option value="">Umum</option>
                                             @foreach ($grades as $grade)
-                                                <option {{ $testimonial->grades()->find($grade->id) ? 'selected' : '' }} value="{{ $grade->id }}">{{ $grade->title }}</option>
+                                            <option {{ $testimonial->grades()->find($grade->id) ? 'selected' : '' }} value="{{ $grade->id }}">{{ $grade->title }}</option>
                                             @endforeach
                                         </select>
                                         @error('grade')
@@ -41,8 +41,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">Status</label>
-                                        {{-- <input type="text" name="status" value="{{ old('status ') ?? $testimonial->status }}" id="status" class="form-control"> --}}
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                        <!-- <input type="text" name="status" value="{{ old('status ') ?? $testimonial->status }}" id="status" class="form-control"> -->
+                                        <select name="status" id="status" class="form-control">
+                                            <option value="1" {{ old('status') ?? $testimonial->status == '1' ? 'selected' : ''}}>Aktif</option>
+                                            <option value="0" {{ old('status') ?? $testimonial->status == '0' ? 'selected' : ''}}>Nonaktif</option>
+                                        </select>
                                         @error('status')
                                         <div class="mt-2 text-danger">{{ $message }}</div>
                                         @enderror

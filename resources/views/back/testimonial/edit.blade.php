@@ -19,10 +19,10 @@
                 <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12">
-                                <form action="{{ route('news.edit', $news) }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('testimonial.edit', $testimonial) }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('put')
-                                    @include('back.news.partials.form-control')
+                                    @include('back.testimonial.partials.form-control')
                                 </form>
                             </div>
                         </div>

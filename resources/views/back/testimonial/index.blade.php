@@ -27,6 +27,7 @@
                                             <th>Nama</th>
                                             <th>Email</th>
                                             <th>Gambar</th>
+                                            <th>Status</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -35,10 +36,11 @@
                                         <tr>
                                             <td>{{ $testimonial->name }}</td>
                                             <td>{{ $testimonial->email }}</td>
-                                            <td><a href="{{ asset('storage/'.$testimoni->image) }}"><img src="{{ asset('storage/'.$testimoni->image) }}" height="150px" alt="{{ $testimoni->title }}"></a></td>
+                                            <td><a href="{{ asset('storage/'.$testimonial->image) }}"><img src="{{ asset('storage/'.$testimonial->image) }}" height="150px" alt="{{ $testimonial->title }}"></a></td>
+                                            <td>{{ $testimonial->status == 1 ? 'Aktif' : 'Nonaktif' }}</td>
                                             <td>
-                                                {{-- <a href="{{ route('testimonial.edit', $testimonial) }}" class="btn btn-success btn-sm"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="{{ route('testimonial.delete', $testimonial) }}" class="btn btn-danger btn-sm" onclick="return confirm_dialog();"><i class="fa fa-eraser"></i></a> --}}
+                                                <a href="{{ route('testimonial.edit', $testimonial) }}" class="btn btn-success btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                                                <!-- <a href="{{ route('testimonial.delete', $testimonial) }}" class="btn btn-danger btn-sm" onclick="return confirm_dialog();"><i class="fa fa-eraser"></i></a> -->
                                             </td>
                                         </tr>
                                         @endforeach

@@ -81,5 +81,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::get('', TestimonialController::class)->name('testimonial');
         Route::get('create', [TestimonialController::class, 'create'])->name('testimonial.create');
         Route::post('create', [TestimonialController::class, 'save']);
+        Route::get('{testimonial:slug}/create', [TestimonialController::class, 'edit'])->name('testimonial.edit');
+        Route::put('{testimonial:slug}/create', [TestimonialController::class, 'update']);
+        Route::get('{testimonial:slug}/delete', [TestimonialController::class, 'destroy'])->name('testimonial.delete');
     });
 });
