@@ -22,6 +22,7 @@ class CreateNewsTable extends Migration
             $table->string('grade')->nullable();
             $table->string('writer')->nullable();
             $table->string('tags')->nullable();
+            $table->integer('view')->nullable();
             $table->timestamps();
         });
     }

@@ -11,13 +11,17 @@ class BlogController extends Controller
     {
         return view('front/blog', [
             'news' => News::latest()->simplePaginate(5),
+            'popularpost' => News::orderByDesc('view')->take(5)->get(),
             'grades' => Grade::get(),
         ]);
     }
 
     public function detail(News $news){
+        $view = $news->view;
+        $news->update(['view' => $view + 1 ]);
         return view('front/detail_blog', [
             'news' => $news,
+            'popularpost' => News::orderByDesc('view')->take(5)->get(),
             'grades' => Grade::get()
         ]);
     }
