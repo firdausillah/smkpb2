@@ -11,7 +11,7 @@ class BlogController extends Controller
     {
         return view('front/blog', [
             'news' => News::latest()->simplePaginate(5),
-            'grades' => Grade::get()
+            'grades' => Grade::get(),
         ]);
     }
 

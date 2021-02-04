@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{HomeController, DashboardController, LogoutController, ProfileController, BlogController, JurusanController, ContactController};
+use App\Http\Controllers\{HomeController, DashboardController, LogoutController, ProfileController, BlogController, JurusanController, ContactController, TeachController};
 use App\Http\Controllers\Admin\{NewsController, GradeController, TeachesController, GaleryController, BannerController, TestimonialController};
 use Illuminate\Support\Facades\{Route, Auth};
 
@@ -25,6 +25,9 @@ Route::get('/jurusan/{grade:slug}', [JurusanController::class, 'detail'])->name(
 // Contact
 Route::get('/contact', ContactController::class)->name('contact');
 Route::post('/contact', [ContactController::class, 'saveTestimoni'])->name('contact.testimoni');
+
+// Guru
+Route::get('/teach', TeachController::class)->name('guru');
 
 // admin
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {

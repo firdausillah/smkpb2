@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Teach;
+use Illuminate\Support\Facades\Storage;
 
 class TeachesController extends Controller
 {
@@ -27,11 +28,13 @@ class TeachesController extends Controller
     public function save(){
         request()->validate([
             'name' => 'required|unique:teaches',
+            'image' => request('image') ? 'image|mimes:jpg,jpeg,png,gif' : '',
             'NIPY' => 'required'
         ]);
 
         Teach::Create([
             'name' => request('name'),
+            'image' => request('image') ? request()->file('image')->store('images/teacher') : 'null',
             'NIPY' => request('NIPY'),
             'position' => request('position'),
             'slug' => Str::slug(request('name')),
@@ -50,11 +53,22 @@ class TeachesController extends Controller
     public function update(Teach $teach){
         request()->validate([
             'name' => 'required|unique:teaches,name,' . $teach->id,
+            'image' => request('image') ? 'image|mimes:jpg,jpeg,png,gif' : '',
             'NIPY' => 'required'
         ]);
 
+        if (request('image')) {
+            Storage::delete($teach->image);
+            $image = request()->file('image')->store('images/teacher');
+        } elseif ($teach->image) {
+            $image = $teach->image;
+        } else {
+            $image = null;
+        }
+
         $teach->update([
             'name' => request('name'),
+            'image' => $image,
             'NIPY' => request('NIPY'),
             'position' => request('position'),
             'slug' => Str::slug(request('name')),

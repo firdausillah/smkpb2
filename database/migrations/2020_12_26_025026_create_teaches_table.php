@@ -16,6 +16,7 @@ class CreateTeachesTable extends Migration
         Schema::create('teaches', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('image');
             $table->string('slug');
             $table->string('NIPY')->nullable();
             $table->string('position');

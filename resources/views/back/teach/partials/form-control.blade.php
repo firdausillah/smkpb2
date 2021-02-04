@@ -19,6 +19,14 @@
                                         <div class="mt-2 text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
+                                    <div class="form-group">
+                                        <label for="">Gambar</label> <br>
+                                        <img src="{{ asset('storage/'.$teach->image) }}" height="100px" alt="{{ $teach->name }}">
+                                        <input type="file" name="image" id="image">
+                                        @error('image')
+                                        <div class="mt-2 text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <div class="form-group text-right">
                                         <button type="submit" class="btn btn-primary" name="button">{{ $submit }}</button>
                                         <a href="{{ route('teach') }}" class="btn btn-secondary">Kembali</a>
