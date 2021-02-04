@@ -1121,7 +1121,7 @@ button:focus {
   margin-bottom: 10px; }
   .contact_form .form-group .form-control {
     font-size: 13px;
-    line-height: 26px;
+    /* line-height: 26px; */
     color: #999;
     border: 1px solid #eeeeee;
     font-family: "Roboto", sans-serif;

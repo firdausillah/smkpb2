@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\{Grade, News};
+use App\Models\{Grade, News, Testimonial};
 
 use Illuminate\Http\Request;
 
@@ -18,7 +18,8 @@ class JurusanController extends Controller
         // dd($grade->id);
         return view('front/jurusan_detail', [
             'grade' => $grade,
-            'news' => News::where('grade', '=', $grade->id)->get()
+            'news' => News::where('grade', '=', $grade->id)->get(),
+            'testimonials' => Testimonial::where('grade', '=', $grade->id)->get()
         ]);
     }
 }

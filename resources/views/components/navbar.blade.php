@@ -33,7 +33,7 @@
 								<li class="nav-item {{ (request()->segment(1) == '') ? ' active' : '' }}"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
 								<li class="nav-item {{ (request()->segment(1) == 'blog') ? ' active' : '' }}"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li> 
 								<li class="nav-item {{ (request()->segment(1) == 'jurusan') ? ' active' : '' }}"><a class="nav-link" href="{{ route('jurusan') }}">Jurusan</a></li>
-								<li class="nav-item {{ (request()->segment(1) == 'contact') ? ' active' : '' }}"><a class="nav-link" href="{{ route('blog') }}">Contact</a></li>
+								<li class="nav-item {{ (request()->segment(1) == 'contact') ? ' active' : '' }}"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
 								<li class="nav-item {{ (request()->segment(1) == 'ppdb') ? ' active' : '' }}"><a class="nav-link" href="{{ route('blog') }}">PPDB</a></li>
 								@guest
                                     @if (Route::has('login'))

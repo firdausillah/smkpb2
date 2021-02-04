@@ -14,7 +14,7 @@ class HomeController extends Controller
             'grades' => Grade::get(),
             'profile' => Profile::first(),
             'news' => News::take(4)->get(),
-            'testimonials' => Testimonial::take(5)->get()
+            'testimonials' => Testimonial::where('status', '=', 1)->take(5)->get()
         ]);
     }
 }

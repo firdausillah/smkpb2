@@ -9,8 +9,8 @@
 <!-- Begin Page Content -->
 <!--================Home Banner Area =================-->
 @if (!empty($banners))
-<section class="banner">
-	<div class="box-1620">
+<section class="home_banner_area">
+	<div class="box-1620 banner_inner">
 		<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
 			<ol class="carousel-indicators">
 				@php
@@ -32,8 +32,8 @@
 					<div class="gradient">
 						<img src="{{ asset('storage/'.$banner->image) }}" class="d-block w-100" alt="{{ $banner->title }}">
 						<div class="carousel-caption d-none d-md-block banner_content">
-							<h3 class="">{{ $banner->title }}</h3>
-							<p class="shadow">{!! Str::limit($banner->description, 200) !!}</p>
+							<h3>{{ $banner->title }}</h3>
+							<p>{!! Str::limit($banner->description, 200) !!}</p>
 							<a class="main_btn" href="{{ $banner->link }}">Selengkapnya</a>
 						</div>
 					</div>
