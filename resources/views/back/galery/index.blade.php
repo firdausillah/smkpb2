@@ -35,8 +35,7 @@
                                             <td>{{ $a->grades ? $a->grades->title:'Umum' }}</td>
                                             <td>
                                                 <a href="{{ route('galery.edit', $a) }}" class="btn btn-success btn-sm"><i class="fas fa-pencil-alt"></i></a>
-                                                {{-- <a href="{{ route('news.detail', $a) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a> --}}
-                                                {{-- <a href="{{ route('news.delete', $a) }}" class="btn btn-danger btn-sm" onclick="return confirm_dialog();"><i class="fa fa-eraser"></i></a> --}}
+                                                <a href="{{ route('news.delete', $a) }}" class="btn btn-danger btn-sm" onclick="return confirm_dialog();"><i class="fa fa-eraser"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach

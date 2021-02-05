@@ -11,8 +11,9 @@ class Galery extends Model
 
     protected $guarded = [];
 
-    public function grades(){
-        return $this->belongsTo(Grade::class);
+    public function grades()
+    {
+        return $this->hasOne(Grade::class, 'id', 'grade');
     }
 
     public function image(){

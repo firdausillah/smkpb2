@@ -20,6 +20,6 @@ class Grade extends Model
     }
 
     public function galery(){
-        return $this->hasMany(Galery::class);
+        return $this->belongsTo(Galery::class);
     }
 }

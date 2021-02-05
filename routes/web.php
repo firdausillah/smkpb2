@@ -73,6 +73,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::get('/create', [GaleryController::class, 'create'])->name('galery.create');
         Route::post('/create', [GaleryController::class, 'save']);
         Route::get('{galery:slug}/edit', [GaleryController::class, 'edit'])->name('galery.edit');
+        Route::put('{galery:slug}/edit', [GaleryController::class, 'update']);
     });
 
     Route::prefix('banner')->group(function(){

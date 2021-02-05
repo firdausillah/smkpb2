@@ -18,7 +18,7 @@ class CreateGaleriesTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('description')->nullable();
-            $table->foreignId('grades')->nullable();
+            $table->foreignId('grade')->nullable();
             $table->timestamps();
         });
     }

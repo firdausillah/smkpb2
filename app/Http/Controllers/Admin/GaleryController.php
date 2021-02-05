@@ -15,12 +15,11 @@ class GaleryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __invoke()
     {
-        // $image = image::find($ij);
         return view('back/galery/index', [
             'galery' => Galery::get(),
-            'image' => Image::get()
+            'grade' => Grade::get()
         ]);
     }
 
@@ -28,19 +27,15 @@ class GaleryController extends Controller
         return view('back/galery/create', [
             'galery' => new Galery,
             'grades' => Grade::get(),
-            'images' => Image::where('galery', '=', 'tuyt')->get(),
             'submit' => 'Create'
         ]);
     }
 
     public function save(){
-        dd(request());
-        /* request()->validate([
+        request()->validate([
             'title' => 'required|unique:galeries',
-            'description' => 'required',
-            // 'image' => 'image|mimes:jpg,jpeg,png,gif'
-        ]); */
-        // dd(request('image'));
+            'description' => 'required'
+        ]); 
 
         Galery::create([
             'title' => request('title'),
@@ -48,16 +43,6 @@ class GaleryController extends Controller
             'grades' => request('grade'),
             'slug' => Str::slug(request('title'))
         ]);
-
-        $gal = Galery::latest()->first();
-        $images = request('image');
-        foreach($images as $image){
-            $filename = $image->store('images/galery');
-            Image::create([
-                'galery' => $gal->id,
-                'image' => $filename
-            ]);
-        }
 
         return back()->with('success', 'Galery '.request('title').' Was Created');
 
@@ -69,8 +54,30 @@ class GaleryController extends Controller
             'galery' => $galery,
             'grades' => Grade::get(),
             'images' => Image::where('galery', '=', $galery->id)->get(),
-            'submit' => 'Create'
+            'submit' => 'Update'
         ]);
     }
 
+    public function update(Galery $galery){
+        request()->validate([
+            'title' => 'required|unique:galeries,title,' . $galery->id,
+            'description' => 'required'
+        ]);
+
+        $galery->update([
+            'title' => request('title'),
+            'description' => request('description'),
+            'grades' => request('grade'),
+            'slug' => Str::slug(request('title'))
+        ]);
+
+        return back()->with('success', 'Galery ' . request('title') . ' Was Updated');
+    }
+
+    public function destroy(Galery $galery)
+    {
+        $galery->delete();
+
+        return back()->with('success', $galery->title . ' Was Deleted!');
+    }
 }
