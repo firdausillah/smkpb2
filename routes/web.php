@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{HomeController, DashboardController, LogoutController, ProfileController, BlogController, JurusanController, ContactController, TeachController, ArtikelController, EkstrakurikulerController};
+use App\Http\Controllers\{HomeController, DashboardController, LogoutController, ProfileController, BlogController, JurusanController, ContactController, TeachController, ArtikelController, EkstrakurikulerController, GaleriController};
 use App\Http\Controllers\Admin\{NewsController, GradeController, TeachesController, GaleryController, BannerController, TestimonialController, ImageController,ArticleController, ExtracurricularController};
 use Illuminate\Support\Facades\{Route, Auth};
 
@@ -37,6 +37,9 @@ Route::post('/contact', [ContactController::class, 'saveTestimoni'])->name('cont
 
 // Guru
 Route::get('/teach', TeachController::class)->name('guru');
+
+// Galeri
+Route::get('/galeri', GaleriController::class)->name('galeri');
 
 // admin
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
