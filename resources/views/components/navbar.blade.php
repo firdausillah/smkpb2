@@ -17,7 +17,8 @@
         				<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
         					<ul class="nav navbar-nav menu_nav ml-auto">
         						<li class="nav-item {{ (request()->segment(1) == '') ? ' active' : '' }}"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-        						<li class="nav-item {{ (request()->segment(1) == 'blog') ? ' active' : '' }}"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
+        						<li class="nav-item {{ (request()->segment(1) == 'blog') ? ' active' : '' }}"><a class="nav-link" href="{{ route('blog') }}">Berita</a></li>
+        						<li class="nav-item {{ (request()->segment(1) == 'artikel') ? ' active' : '' }}"><a class="nav-link" href="{{ route('artikel') }}">Artikel</a></li>
         						<li class="nav-item {{ (request()->segment(1) == 'jurusan') ? ' active' : '' }}"><a class="nav-link" href="{{ route('jurusan') }}">Jurusan</a></li>
         						<li class="nav-item {{ (request()->segment(1) == 'teach') ? ' active' : '' }}"><a class="nav-link" href="{{ route('guru') }}">Guru</a></li>
         						<li class="nav-item {{ (request()->segment(1) == 'contact') ? ' active' : '' }}"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>

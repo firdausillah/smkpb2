@@ -35,6 +35,7 @@ class BlogController extends Controller
 
         return view('front/blog', [
             'news' => $news,
+            'popularpost' => News::orderByDesc('view')->take(5)->get(),
             'grades' => Grade::get()
         ]);
     }

@@ -22,4 +22,8 @@ class Grade extends Model
     public function galery(){
         return $this->belongsTo(Galery::class);
     }
+
+    public function article(){
+        return $this->belongsTo(Article::class);
+    }
 }

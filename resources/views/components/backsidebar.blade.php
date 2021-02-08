@@ -22,7 +22,13 @@
             <li class="nav-item{{ (request()->segment(2) == 'news') ? ' active' : '' }}">
                 <a class="nav-link" href="{{ route('news') }}">
                     <i class="fas fa-newspaper"></i>
-                    <span>News</span>
+                    <span>Berita</span>
+                </a>
+            </li>
+            <li class="nav-item{{ (request()->segment(2) == 'article') ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('article') }}">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Artikel</span>
                 </a>
             </li>
             <li class="nav-item{{ (request()->segment(2) == 'banner') ? ' active' : '' }}">

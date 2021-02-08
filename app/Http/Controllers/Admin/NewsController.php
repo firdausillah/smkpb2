@@ -46,6 +46,7 @@ class NewsController extends Controller
             'writer' => request('writer'),
             'description' => request('description'),
             'grade' => request('grade'),
+            'view' => request('view'),
             'slug' => Str::slug(request('title')),
         ]);
 
@@ -85,6 +86,7 @@ class NewsController extends Controller
             'writer' => request('writer'),
             'description' => request('description'),
             'grade' => request('grade'),
+            'view' => request('view'),
             'slug' => Str::slug(request('title')),
         ]);
 

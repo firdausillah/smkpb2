@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\{HomeController, DashboardController, LogoutController, ProfileController, BlogController, JurusanController, ContactController, TeachController};
-use App\Http\Controllers\Admin\{NewsController, GradeController, TeachesController, GaleryController, BannerController, TestimonialController, ImageController};
+use App\Http\Controllers\{HomeController, DashboardController, LogoutController, ProfileController, BlogController, JurusanController, ContactController, TeachController, ArtikelController};
+use App\Http\Controllers\Admin\{NewsController, GradeController, TeachesController, GaleryController, BannerController, TestimonialController, ImageController, ArticleController};
 use Illuminate\Support\Facades\{Route, Auth};
 
 
@@ -17,6 +17,11 @@ Route::get('/logout', LogoutController::class)->name('logout');
 Route::get('/blog', BlogController::class)->name('blog');
 Route::get('/blog/{news:slug}', [BlogController::class, 'detail'])->name('blog.detail');
 Route::post('/blog/find', [BlogController::class, 'find'])->name('blog.find');
+
+//articles front
+Route::get('/artikel', ArtikelController::class)->name('artikel');
+Route::get('/artikel/{article:slug}', [ArtikelController::class, 'detail'])->name('artikel.detail');
+Route::post('/artikel/find', [ArtikelController::class, 'find'])->name('artikel.find');
 
 // Jurusan
 Route::get('/jurusan', JurusanController::class)->name('jurusan');
@@ -41,6 +46,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::put('{news:slug}/edit', [NewsController::class, 'update']);
         Route::get('{news:slug}/detail', [NewsController::class, 'detail'])->name('news.detail');
         Route::get('{news:slug}/delete', [NewsController::class, 'destroy'])->name('news.delete');
+    });
+
+    Route::prefix('article')->group(function () {
+        Route::get('/', ArticleController::class)->name('article');
+        Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
+        Route::post('/create', [ArticleController::class, 'save']);
+        Route::get('{article:slug}/edit', [ArticleController::class, 'edit'])->name('article.edit');
+        Route::put('{article:slug}/edit', [ArticleController::class, 'update']);
+        Route::get('{article:slug}/detail', [ArticleController::class, 'detail'])->name('article.detail');
+        Route::get('{article:slug}/delete', [ArticleController::class, 'destroy'])->name('article.delete');
     });
     
     Route::prefix('grade')->group(function () {
