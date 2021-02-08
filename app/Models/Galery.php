@@ -17,7 +17,7 @@ class Galery extends Model
     }
 
     public function image(){
-        return $this->belongsToMany(Image::class);
+        return $this->hasMany(Image::class);
     }
 
     public function images($id){

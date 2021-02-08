@@ -12,6 +12,6 @@ class Image extends Model
     protected $guarded = [];
     
     public function galery(){
-        return $this->belongsToMany(Galery::class);
+        return $this->belongsTo(Galery::class);
     }
 }

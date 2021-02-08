@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\{HomeController, DashboardController, LogoutController, ProfileController, BlogController, JurusanController, ContactController, TeachController};
-use App\Http\Controllers\Admin\{NewsController, GradeController, TeachesController, GaleryController, BannerController, TestimonialController};
+use App\Http\Controllers\Admin\{NewsController, GradeController, TeachesController, GaleryController, BannerController, TestimonialController, ImageController};
 use Illuminate\Support\Facades\{Route, Auth};
 
 
@@ -74,6 +74,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::post('/create', [GaleryController::class, 'save']);
         Route::get('{galery:slug}/edit', [GaleryController::class, 'edit'])->name('galery.edit');
         Route::put('{galery:slug}/edit', [GaleryController::class, 'update']);
+    });
+
+    Route::prefix('image')->group(function(){
+        Route::get('', ImageController::class)->name('image');
+        Route::get('create', [ImageController::class, 'create'])->name('image.create');
+        Route::post('create', [ImageController::class, 'save']);
     });
 
     Route::prefix('banner')->group(function(){

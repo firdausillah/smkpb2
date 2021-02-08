@@ -31,7 +31,7 @@
 				<div class="carousel-item blockout {{ $no==1 ? 'active' : '' }}">
 					<div class="gradient">
 						<img src="{{ asset('storage/'.$banner->image) }}" class="d-block w-100" alt="{{ $banner->title }}">
-						<div class="carousel-caption d-none d-md-block banner_content">
+						<div class="carousel-caption d-none d-md-block banner_content m-auto">
 							<h3>{{ $banner->title }}</h3>
 							<p>{!! Str::limit($banner->description, 200) !!}</p>
 							<a class="main_btn" href="{{ $banner->link }}">Selengkapnya</a>

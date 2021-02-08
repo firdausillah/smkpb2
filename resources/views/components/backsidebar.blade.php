@@ -38,10 +38,16 @@
                 </a>
             </li>
             <li class="nav-item{{ (request()->segment(2) == 'galery') ? ' active' : '' }}">
-                <a class="nav-link" href="{{ route('galery') }}">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-image"></i>
-                    <span>Galery</span>
+                    <span>Master Galery</span>
                 </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('galery') }}">Galery</a>
+                        <a class="collapse-item" href="{{ route('image') }}">Image</a>
+                    </div>
+                </div>
             </li>
             <li class="nav-item{{ (request()->segment(2) == 'teach') ? ' active' : '' }}">
                 <a class="nav-link" href="{{ route('teach') }}">
