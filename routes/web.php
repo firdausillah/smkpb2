@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\{HomeController, DashboardController, LogoutController, ProfileController, BlogController, JurusanController, ContactController, TeachController, ArtikelController};
-use App\Http\Controllers\Admin\{NewsController, GradeController, TeachesController, GaleryController, BannerController, TestimonialController, ImageController, ArticleController};
+use App\Http\Controllers\{HomeController, DashboardController, LogoutController, ProfileController, BlogController, JurusanController, ContactController, TeachController, ArtikelController, EkstrakurikulerController};
+use App\Http\Controllers\Admin\{NewsController, GradeController, TeachesController, GaleryController, BannerController, TestimonialController, ImageController,ArticleController, ExtracurricularController};
 use Illuminate\Support\Facades\{Route, Auth};
 
 
@@ -26,6 +26,10 @@ Route::post('/artikel/find', [ArtikelController::class, 'find'])->name('artikel.
 // Jurusan
 Route::get('/jurusan', JurusanController::class)->name('jurusan');
 Route::get('/jurusan/{grade:slug}', [JurusanController::class, 'detail'])->name('jurusan.detail');
+
+// Ekstrakurikuler
+Route::get('/ekstrakurikuler', EkstrakurikulerController::class)->name('ekstrakurikuler');
+Route::get('/ekstrakurikuler/{extracurricular:slug}', [EkstrakurikulerController::class, 'detail'])->name('ekstrakurikuler.detail');
 
 // Contact
 Route::get('/contact', ContactController::class)->name('contact');
@@ -66,6 +70,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::put('{grade:slug}/edit', [GradeController::class, 'update']);
         Route::get('{grade:slug}/detail', [GradeController::class, 'detail'])->name('grade.detail');
         Route::get('{grade:slug}/delete', [GradeController::class, 'destroy'])->name('grade.delete');
+    });
+    
+    Route::prefix('extracurricular')->group(function () {
+        Route::get('/', ExtracurricularController::class)->name('extracurricular');
+        Route::get('/create', [ExtracurricularController::class, 'create'])->name('extracurricular.create');
+        Route::post('/create', [ExtracurricularController::class, 'save']);
+        Route::get('{extracurricular:slug}/edit', [ExtracurricularController::class, 'edit'])->name('extracurricular.edit');
+        Route::put('{extracurricular:slug}/edit', [ExtracurricularController::class, 'update']);
+        Route::get('{extracurricular:slug}/detail', [ExtracurricularController::class, 'detail'])->name('extracurricular.detail');
+        Route::get('{extracurricular:slug}/delete', [ExtracurricularController::class, 'destroy'])->name('extracurricular.delete');
     });
 
     Route::prefix('teach')->group(function(){

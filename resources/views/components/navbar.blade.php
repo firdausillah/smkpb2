@@ -20,6 +20,7 @@
         						<li class="nav-item {{ (request()->segment(1) == 'blog') ? ' active' : '' }}"><a class="nav-link" href="{{ route('blog') }}">Berita</a></li>
         						<li class="nav-item {{ (request()->segment(1) == 'artikel') ? ' active' : '' }}"><a class="nav-link" href="{{ route('artikel') }}">Artikel</a></li>
         						<li class="nav-item {{ (request()->segment(1) == 'jurusan') ? ' active' : '' }}"><a class="nav-link" href="{{ route('jurusan') }}">Jurusan</a></li>
+        						<li class="nav-item {{ (request()->segment(1) == 'ekstrakurikuler') ? ' active' : '' }}"><a class="nav-link" href="{{ route('ekstrakurikuler') }}">Kegiatan Siswa</a></li>
         						<li class="nav-item {{ (request()->segment(1) == 'teach') ? ' active' : '' }}"><a class="nav-link" href="{{ route('guru') }}">Guru</a></li>
         						<li class="nav-item {{ (request()->segment(1) == 'contact') ? ' active' : '' }}"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
         						<li class="nav-item {{ (request()->segment(1) == 'ppdb') ? ' active' : '' }}"><a class="nav-link" href="{{ route('blog') }}">PPDB</a></li>

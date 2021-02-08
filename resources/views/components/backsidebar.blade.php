@@ -40,7 +40,13 @@
             <li class="nav-item{{ (request()->segment(2) == 'grade') ? ' active' : '' }}">
                 <a class="nav-link" href="{{ route('grade') }}">
                     <i class="fas fa-flag"></i>
-                    <span>Grade</span>
+                    <span>Program Keahlian</span>
+                </a>
+            </li>
+            <li class="nav-item{{ (request()->segment(2) == 'extracurricular') ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('extracurricular') }}">
+                    <i class="fas fa-flag"></i>
+                    <span>Kegiatan Siswa</span>
                 </a>
             </li>
             <li class="nav-item{{ (request()->segment(2) == 'galery') ? ' active' : '' }}">
@@ -58,7 +64,7 @@
             <li class="nav-item{{ (request()->segment(2) == 'teach') ? ' active' : '' }}">
                 <a class="nav-link" href="{{ route('teach') }}">
                     <i class="fas fa-user"></i>
-                    <span>Teach</span>
+                    <span>Guru</span>
                 </a>
             </li>
             <li class="nav-item{{ (request()->segment(2) == 'profile') ? ' active' : '' }}">

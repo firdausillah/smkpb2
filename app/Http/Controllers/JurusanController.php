@@ -18,7 +18,7 @@ class JurusanController extends Controller
         // dd($grade->id);
         return view('front/jurusan_detail', [
             'grade' => $grade,
-            'news' => News::where('grade', '=', $grade->id)->get(),
+            'news' => News::take(5)->get(),
             'testimonials' => Testimonial::where('grade', '=', $grade->id)->get()
         ]);
     }
