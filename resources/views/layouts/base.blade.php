@@ -12,17 +12,17 @@
 
     <link rel="icon" href="{{ asset('storage/images/logo/WBU2IlHJiXt2fDqWnf0QlFFt8fv97odmnyuzhVlI.png') }}" type="image/png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}">
-    <link rel="stylesheet" href="{{ asset("vendors/linericon/style.css") }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/linericon/style.css') }}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="{{ asset("vendors/owl-carousel/owl.carousel.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("vendors/lightbox/simpleLightbox.css") }}">
-    <link rel="stylesheet" href="{{ asset("vendors/nice-select/css/nice-select.css") }}">
-    <link rel="stylesheet" href="{{ asset("vendors/animate-css/animate.css") }}">
-     <link rel="stylesheet" href="{{ asset("vendors/popup/magnific-popup.css") }}">
+    <link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/lightbox/simpleLightbox.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/nice-select/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/animate-css/animate.css') }}">
+     <link rel="stylesheet" href="{{ asset('vendors/popup/magnific-popup.css') }}">
     <!-- main css -->
-    <link rel="stylesheet" href="{{ asset("css/style.css") }}">
-    <link rel="stylesheet" href="{{ asset("css/responsive.css") }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
     @stack('css')
 
