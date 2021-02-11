@@ -4,7 +4,7 @@
     
 @endpush
 
-@section('title', 'Jurusan')
+@section('title', 'Program Keahlian')
 
 @section('content')
   <!-- Begin Page Content -->
@@ -14,10 +14,10 @@
             	<div class="overlay bg-parallax" style="background-image: url({{ asset('/storage/front-img/notify-bg.jpg') }})" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
 					<div class="banner_content text-center">
-						<h2>Jurusan</h2>
+						<h2>Program Keahlian</h2>
 						<div class="page_link">
 							<a href="{{ route('home') }}">Home</a>
-							<a href="{{ route('jurusan') }}">Jurusan</a>
+							<a href="{{ route('jurusan') }}">Program Keahlian</a>
 						</div>
 					</div>
 				</div>

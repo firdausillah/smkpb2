@@ -5,7 +5,7 @@
 @endpush
 
 @section('title')
-Jurusan {{ $grade->title }}
+Program Keahlian {{ $grade->title }}
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@ Jurusan {{ $grade->title }}
 				<h2>{{ $grade->title }}</h2>
 				<div class="page_link">
 					<a href="{{ route('home') }}">Home</a>
-					<a href="{{ route('jurusan') }}">Jurusan</a>
+					<a href="{{ route('jurusan') }}">Program Keahlian</a>
 					<a href="#">{{ $grade->title }}</a>
 				</div>
 			</div>

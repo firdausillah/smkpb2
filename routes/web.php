@@ -24,8 +24,8 @@ Route::get('/artikel/{article:slug}', [ArtikelController::class, 'detail'])->nam
 Route::post('/artikel/find', [ArtikelController::class, 'find'])->name('artikel.find');
 
 // Jurusan
-Route::get('/jurusan', JurusanController::class)->name('jurusan');
-Route::get('/jurusan/{grade:slug}', [JurusanController::class, 'detail'])->name('jurusan.detail');
+Route::get('/program-keahlian', JurusanController::class)->name('jurusan');
+Route::get('/program-keahlian/{grade:slug}', [JurusanController::class, 'detail'])->name('jurusan.detail');
 
 // Ekstrakurikuler
 Route::get('/ekstrakurikuler', EkstrakurikulerController::class)->name('ekstrakurikuler');

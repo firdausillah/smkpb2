@@ -18,10 +18,10 @@
         				<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
         					<ul class="nav navbar-nav menu_nav ml-auto">
         						<li class="nav-item {{ ($seg == '') ? ' active' : '' }}"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-        						<li class="nav-item submenu dropdown {{ ($seg == 'jurusan' or $seg == 'ekstrakurikuler' or $seg == 'teach') ? ' active' : '' }}">
+        						<li class="nav-item submenu dropdown {{ ($seg == 'program-keahlian' or $seg == 'ekstrakurikuler' or $seg == 'teach') ? ' active' : '' }}">
         							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Akademik</a>
         							<ul class="dropdown-menu">
-        								<li class="nav-item"><a class="nav-link" href="{{ route('jurusan') }}">Jurusan</a></li>
+        								<li class="nav-item"><a class="nav-link" href="{{ route('jurusan') }}">Program Keahlian</a></li>
         								<li class="nav-item"><a class="nav-link" href="{{ route('ekstrakurikuler') }}">Kegiatan Siswa</a></li>
         								<li class="nav-item"><a class="nav-link" href="{{ route('guru') }}">Guru</a></li>
         							</ul>

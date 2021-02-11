@@ -5,7 +5,7 @@
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 @endpush
 
-@section('title', 'Jurusan')
+@section('title', 'Program Keahlian')
 
 @section('content')
     <!-- Begin Page Content -->
@@ -13,7 +13,7 @@
         @include('alert')
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Jurusan</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Program Keahlian</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-2">

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login Template</title>
+    <title>Login Admin SMK PUSPA BANGSA 2</title>
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -52,11 +52,11 @@
                             @if (Route::has('password.request'))
                             <a href="{{ route('password.request') }}" class="forgot-password-link">Forgot password?</a>
                             @endif
-                            <nav class="login-card-footer-nav">
+                            <!-- <nav class="login-card-footer-nav">
                                 Copyright &copy; <script>
                                     document.write(new Date().getFullYear());
                                 </script> <a href="smkpuspabangsa2.sch.id">SMK PUSPA BANGSA 2</a>
-                            </nav>
+                            </nav> -->
                         </div>
                     </div>
                 </div>

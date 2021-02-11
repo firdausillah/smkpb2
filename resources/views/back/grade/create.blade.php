@@ -5,7 +5,7 @@
 <script type="text/javascript" src="{{ asset('admin/ckeditor/ckeditor.js') }}"></script>
 @endpush
 
-@section('title', 'Jurusan')
+@section('title', 'Program Keahlian')
 
 @section('content')
     <!-- Begin Page Content -->
